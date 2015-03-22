@@ -1,7 +1,7 @@
 pkgbase = arm-linux-gnueabihf-gcc
 	pkgdesc = The GNU Compiler Collection (arm-linux-gnueabihf)
-	pkgver = 4.9.1
-	pkgrel = 2.1
+	pkgver = 4.9.2
+	pkgrel = 1
 	url = http://gcc.gnu.org
 	arch = i686
 	arch = x86_64
@@ -11,13 +11,13 @@ pkgbase = arm-linux-gnueabihf-gcc
 	depends = arm-linux-gnueabihf-glibc
 	depends = libmpc
 	depends = elfutils
-	provides = arm-linux-gnueabihf-gcc-stage1=4.9.1
-	provides = arm-linux-gnueabihf-gcc-stage2=4.9.1
+	provides = arm-linux-gnueabihf-gcc-stage1=4.9.2
+	provides = arm-linux-gnueabihf-gcc-stage2=4.9.2
 	conflicts = arm-linux-gnueabihf-gcc-stage1
 	conflicts = arm-linux-gnueabihf-gcc-stage2
 	replaces = arm-linux-gnueabihf-gcc-stage1
 	replaces = arm-linux-gnueabihf-gcc-stage2
-	source = ftp://gcc.gnu.org/pub/gcc/releases/gcc-4.9.1/gcc-4.9.1.tar.bz2
+	source = ftp://gcc.gnu.org/pub/gcc/releases/gcc-4.9.2/gcc-4.9.2.tar.bz2
 	options = !buildflags
 	options = !libtool
 	options = !emptydirs

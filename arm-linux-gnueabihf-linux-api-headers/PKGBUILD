@@ -1,14 +1,14 @@
 # Contributor: Alexander 'hatred' Drozdov <adrozdoff@gmail.com>
-# Maintainer: toha257 <toha257@gmail.com>
+# Maintainer: Erico Nunes <nunes dot erico at gmail>
 
 # toolchain build order: linux-api-headers->glibc->binutils->gcc->binutils->glibc
 
 _target_arch=arm
 _target=${_target_arch}-linux-gnueabihf
 pkgname=${_target}-linux-api-headers
-pkgver=3.16.2
-_basever=3.16
-pkgrel=0.1
+pkgver=3.19.2
+_basever=3.19
+pkgrel=1
 pkgdesc="Kernel headers sanitized for use in userspace (${_target})"
 arch=(any)
 url="http://www.gnu.org/software/libc"
@@ -17,7 +17,7 @@ provides=("${_target}-linux-api-headers=${_basever}"
   "${_target}-linux-api-headers30")
 conflicts=("${_target}-linux-api-headers26")
 source=("http://www.kernel.org/pub/linux/kernel/v3.x/linux-${pkgver}.tar.xz")
-md5sums=('227814a1a523992400da5d5437552445')
+md5sums=('d9f991fc1e5d0ffa9740ddd839ad83f7')
 
 build() {
   cd "${srcdir}/linux-${pkgver}"

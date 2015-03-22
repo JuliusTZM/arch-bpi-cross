@@ -4,7 +4,7 @@
 _target="arm-linux-gnueabihf"
 pkgname=${_target}-gcc
 pkgver=4.9.2
-pkgrel=0.1
+pkgrel=1
 pkgdesc="The GNU Compiler Collection (${_target})"
 arch=(i686 x86_64)
 license=('GPL' 'LGPL')
@@ -49,9 +49,9 @@ build() {
     --disable-libgomp \
     --enable-__cxa_atexit \
     --enable-addons \
-    --with-arch=armv6 \
+    --with-arch=armv7-a \
     --with-float=hard \
-    --with-fpu=vfp
+    --with-fpu=vfpv3-d16
 
   make all-gcc all-target-libgcc all-target-libstdc++-v3
 }
