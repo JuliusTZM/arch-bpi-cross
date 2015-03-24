@@ -9,22 +9,31 @@ fi
 
 arch="$(uname -m)"
 prefix=arm-linux-gnueabihf
-binutils_version=2.24-1.1-${arch}
-gcc_stage1_version=4.9.2-0.1-${arch}
-linux_api_headers_version=3.16.2-0.1-any
-glibc_headers_version=2.20-0.1-any
-gcc_stage2_version=4.9.2-0.1-${arch}
-glibc_version=2.20-0.1-any
-gcc_version=4.9.2-0.1-${arch}
+binutils_version=2.25-1-${arch}
+gcc_stage1_version=4.9.2-1-${arch}
+linux_api_headers_version=3.19.2-1-any
+glibc_headers_version=2.21-1-any
+gcc_stage2_version=4.9.2-1-${arch}
+glibc_version=2.21-1-any
+gcc_version=4.9.2-1-${arch}
 
 gcc_filename="gcc-${gcc_version%%-*}.tar.bz2"
-glibc_filename="glibc-${glibc_version%%-*}.tar.bz2"
+glibc_filename="glibc-${glibc_version%%-*}.tar.xz"
 
 function build() {
     eval "version=\${${1//-/_}_version}"
     pkg="${prefix}-$1/${prefix}-$1-${version}.pkg.tar.xz"
     if [ -n "${force}" -o ! -f "${pkg}" ]; then
-        (cd "./${prefix}-$1" && makepkg "${force}")
+	(cd "./${prefix}-$1"
+	    if [ $1 == "glibc-headers" ]; then
+	        wget http://ftp2.ie.freesbie.org/pub/ftp.frugalware.org/pub/frugalware/frugalware-current/source/base/glibc/glibc-2.21-roundup.patch
+	    elif [ $1 == "binutils" ]; then
+		wget https://raw.githubusercontent.com/archlinuxarm/PKGBUILDs/master/core/binutils/binutils-2.25-roundup.patch
+	    fi
+         makepkg "${force}")
+    fi
+    if [ $1 == "binutils" ]; then
+	sudo pacman -U "${prefix}-$1/${prefix}-$1-ldscripts-${version}.pkg.tar.xz"
     fi
     sudo pacman -U "${pkg}"
 }
