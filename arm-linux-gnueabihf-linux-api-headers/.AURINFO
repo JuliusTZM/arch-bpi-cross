@@ -1,6 +1,6 @@
 pkgbase = arm-linux-gnueabihf-linux-api-headers
 	pkgdesc = Kernel headers sanitized for use in userspace (arm-linux-gnueabihf)
-	pkgver = 3.19.1
+	pkgver = 3.19.3
 	pkgrel = 1
 	url = http://www.gnu.org/software/libc
 	arch = any
@@ -8,7 +8,7 @@ pkgbase = arm-linux-gnueabihf-linux-api-headers
 	provides = arm-linux-gnueabihf-linux-api-headers=3.19
 	provides = arm-linux-gnueabihf-linux-api-headers30
 	conflicts = arm-linux-gnueabihf-linux-api-headers26
-	source = http://www.kernel.org/pub/linux/kernel/v3.x/linux-3.19.1.tar.xz
+	source = http://www.kernel.org/pub/linux/kernel/v3.x/linux-3.19.3.tar.xz
 
 pkgname = arm-linux-gnueabihf-linux-api-headers
 
