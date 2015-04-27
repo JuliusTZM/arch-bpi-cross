@@ -50,6 +50,7 @@ build() {
     --enable-__cxa_atexit \
     --enable-addons \
     --with-arch=armv7-a \
+    --with-tune=cortex-a9 \
     --with-float=hard \
     --with-fpu=vfpv3-d16
 

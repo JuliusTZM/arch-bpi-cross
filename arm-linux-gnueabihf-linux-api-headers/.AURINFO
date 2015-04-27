@@ -1,6 +1,6 @@
 pkgbase = arm-linux-gnueabihf-linux-api-headers
 	pkgdesc = Kernel headers sanitized for use in userspace (arm-linux-gnueabihf)
-	pkgver = 3.19.3
+	pkgver = 3.19.5
 	pkgrel = 1
 	url = http://www.gnu.org/software/libc
 	arch = any

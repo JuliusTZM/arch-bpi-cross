@@ -6,7 +6,7 @@
 _target_arch=arm
 _target=${_target_arch}-linux-gnueabihf
 pkgname=${_target}-linux-api-headers
-pkgver=3.19.3
+pkgver=3.19.5
 _basever=3.19
 pkgrel=1
 pkgdesc="Kernel headers sanitized for use in userspace (${_target})"
